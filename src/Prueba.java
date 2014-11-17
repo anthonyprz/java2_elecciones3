@@ -144,8 +144,13 @@ public class Prueba {
 					          numLine++;
 					          Partido part = new Partido();
 					          String[] elementos = String.split(line,",");
+					          String id = elementos [0];
+
 					          String candidato = elementos[1];
-					          String ideologia = ...;
+
+					          String director = elementos [2];
+
+					          String ideologia = elementos [3]
 					          part.setid(id)
 					          part.setcandidato(candidato);
 					          part.setdirector(director);
