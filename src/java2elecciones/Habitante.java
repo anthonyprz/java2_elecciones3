@@ -1,4 +1,4 @@
-//package com;
+//package java2elecciones;
 public class Habitante {
 
 		private String nombre;

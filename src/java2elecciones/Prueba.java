@@ -1,4 +1,4 @@
-//package com;
+//package java2elecciones;
 
 import java.util.Scanner;
 import java.util.*;
@@ -100,6 +100,7 @@ public class Prueba {
 
 //if (opcion.equalsIgnoreCase("partido")){
 		System.out.println("por ultimo el partido");
+		String id=null;
 		String candidato;
 		String director;
 		String ideologia;
@@ -114,28 +115,61 @@ public class Prueba {
 
 		//setter partido
 		Partido part = new Partido();
-		part.setcandidato(candidato);
-		part.setdirector(director);
-		part.setideologia(ideologia);
+		part.setId(id);
+		part.setCandidato(candidato);
+		part.setDirector(director);
+		part.setIdeologia(ideologia);
 		
-		String nombredelfichero = "listadopartidos.txt";
-		String ruta = "/home/zubiri/Escritorio/java2_elecciones/src";
+	//	String nombredelfichero = "listadopartidos.txt";
+	//	String ruta = "/home/zubiri/Escritorio/java2elecciones/src/java2elecciones/";
 		
 		try {
-						
-						FileReader r = new FileReader("/home/zubiri/Escritorio/java2_elecciones/src/listadopartidos.txt");
-						BufferedReader buffer = new BufferedReader (r);
-						ArrayList<String> temp = new ArrayList<String>();
-  						System.out.println("Estos son los partidos que hay disponibles");
-					        int numLine=0;
-					        String Line=null;
-					   
-					      while ((Line=buffer.readLine()) != null) {
-					          numLine++;
-					    	  temp.add(Line);
-					    	   	System.out.println("-->"+  temp);
+					
+			FileReader r = new FileReader("listadopartidos.txt");
+		
+			BufferedReader buffer = new BufferedReader (r);
+
+
+					    ArrayList<Partido> temp = new ArrayList<Partido>();
+  						String line=null;
+  						//int numline;
+			int i =0;
+					      while ((line=buffer.readLine()) != null) {
+					          //numline++;
+					          Partido part1 = new Partido();
+					          String[] elementos = line.split(",");
+					         
+					          String Id = elementos [0];
+					          String Candidato = elementos[1];
+					          String Director = elementos [2];
+					          String Ideologia = elementos [3];
+
+					          part1.setId(id);
+					          part1.setCandidato(candidato);
+					          part1.setDirector(director);
+					          part1.setIdeologia(ideologia);
+					         
+					    	  temp.add(part1);
+						  
+//System.out.println("--" + part1.getId());
+//System.out.println("--" + part1.getCandidato());
+//System.out.println("--" + part1.getDirector());
+//System.out.println("--" + part1.getIdeologia());
+
+  			for (int a=0; a<temp.size(); a++);
+			{
+			System.out.println("--" + part1.get(a).getId());
+			//System.out.println(temp.get(a).getCandidato());
+			//System.out.println(temp.get(a).getDirector());
+			//System.out.println(temp.get(a).getIdeologia());
+			}
+
+		
+
+	 			//	  System.out.println("-->"+  part1.getId());
 					    	  
 					      }
+  						  
 
 	}
 	 catch (FileNotFoundException e) 

@@ -1,4 +1,4 @@
-//package com;
+//package java2elecciones;
 public class Inmueble {
 				
 				private String tipo;
